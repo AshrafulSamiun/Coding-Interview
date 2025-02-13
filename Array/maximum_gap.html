@@ -1,0 +1,22 @@
+<script>
+
+    function maximum_gap(nums){
+        let n=nums.length;
+
+        if(n==1) return 0;
+        let max_diff=0;
+        nums.sort((a, b) => a - b);
+       // console.log(nums);return;
+        for(let i=0; i<n-1; i++)
+        {
+            diff=nums[i+1]-nums[i];
+            if(diff>max_diff) max_diff=diff;
+         }
+
+        return max_diff;
+    }
+
+    let num=[3,6,9,1];
+    $result=maximum_gap(num);
+    console.log($result);
+</script>
