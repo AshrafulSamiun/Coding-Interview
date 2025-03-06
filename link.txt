@@ -2,3 +2,10 @@ https://leetcode.com/problems/find-all-anagrams-in-a-string/description/
 https://leetcode.com/problems/find-all-anagrams-in-a-string/description/
 https://leetcode.com/problems/add-two-numbers/description/
 https://leetcode.com/problems/add-binary/
+
+
+https://leetcode.com/problems/merge-sorted-array/description/
+https://leetcode.com/problems/reverse-linked-list/description/
+https://leetcode.com/problems/reverse-linked-list-ii/description/
+https://leetcode.com/problems/delete-the-middle-node-of-a-linked-list/
+https://www.shafaetsplanet.com/?p=2822#google_vignette
