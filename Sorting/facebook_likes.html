@@ -1,0 +1,21 @@
+<script>
+
+    let n;
+    let m;
+    let likes = [];
+    [n,m]  = prompt("Enter the number of post and queries:").trim().split(" ").map(Number);
+    likes = prompt("Enter the number of likes of post:").trim().split(" ").map(Number);
+    
+    for(i=0;i<m; i++)
+    {
+        let [post_no, like_increase] = prompt("Enter the post no and likes increase:").trim().split(" ").map(Number);
+        likes[post_no - 1] += like_increase; // Update likes
+
+        let max_likes = Math.max(...likes);
+        let best_post = likes.indexOf(max_likes) + 1; // Convert to 1-based index
+
+        console.log(best_post, max_likes);
+    
+    }
+  
+</script>

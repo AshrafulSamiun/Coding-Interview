@@ -1,0 +1,17 @@
+<script>
+    let n = parseInt(prompt("Enter the number of patients:"));
+    let patients = [];
+
+    // Read patient data
+    for (let i = 0; i < n; i++) {
+        let input = prompt(`Enter details for patient ${i + 1} (ID Name Age Severity):`).split(" ");
+        patients.push([parseInt(input[0]), input[1], parseInt(input[2]), parseInt(input[3])]);
+    }
+
+    // Sort by Severity (descending) and Age (ascending)
+    patients.sort((a, b) => b[3] - a[3] || a[2] - b[2]);
+
+    // Print sorted patients
+    console.log("Sorted Patient List:");
+    patients.forEach(patient => console.log(patient.join(" ")));
+</script>
