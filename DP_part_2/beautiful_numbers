@@ -1,0 +1,39 @@
+from functools import lru_cache
+
+def count_beautiful_numbers(L, R, k):
+    def count(num_str):
+        @lru_cache(maxsize=None)
+        def dp(pos, mod, tight):
+            if pos == len(num_str):
+                return 1 if mod == 0 else 0
+
+            limit = int(num_str[pos]) if tight else 9
+            total = 0
+
+            for digit in range(0, limit + 1):
+                total += dp(
+                    pos + 1,
+                    (mod + digit) % k,
+                    tight and (digit == limit)
+                )
+            return total
+
+        return dp(0, 0, True)
+
+    def str_minus_one(s):
+        s = list(s)
+        i = len(s) - 1
+        while i >= 0:
+            if s[i] != '0':
+                s[i] = str(int(s[i]) - 1)
+                break
+            else:
+                s[i] = '9'
+                i -= 1
+        return ''.join(s).lstrip('0') or '0'
+
+    return count(str(R)) - count(str_minus_one(str(L)))
+
+# Input
+L, R, k = map(int, input().split())
+print(count_beautiful_numbers(L, R, k))
